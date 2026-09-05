@@ -233,7 +233,72 @@
             #endregion
 
 
+            #region Exercise04
 
+            /// Exercise 4: Unique Email Validator
+            ///
+            /// Use Collection to manage unique email addresses.
+
+
+            /// 01) Create a HashSet<string> with a case-insensitive comparer.
+            ///
+            /// HashSet<string> emails = new HashSet<string>( StringComparer.OrdinalIgnoreCase);
+
+
+            /// 02) Add these emails:
+            ///     "ahmed@test.com", "AHMED@test.com",
+            ///     "sara@test.com", "Sara@Test.com".
+            ///
+            /// emails.Add("ahmed@test.com");
+            /// emails.Add("AHMED@test.com");
+            /// emails.Add("sara@test.com");
+            /// emails.Add("Sara@Test.com");
+
+
+            /// 03) Print Count — how many are actually stored? Explain why.
+            ///
+            /// Console.WriteLine("Email Count: " + emails.Count);
+
+
+            /// 04) Create two sets:
+            ///     Set A = {1,2,3,4,5}
+            ///     Set B = {4,5,6,7,8}
+            ///
+            ///HashSet<int> setA =  [ 1, 2, 3, 4, 5 ];
+            /// HashSet<int> setB = [ 4, 5, 6, 7, 8 ];
+
+
+            /// 05) Print the result of:
+            ///     UnionWith, IntersectWith, ExceptWith.
+            ///
+            /// HashSet<int> union = new HashSet<int>(setA);
+            /// union.UnionWith(setB);
+            ///
+            /// Console.WriteLine( Union );
+            ///
+            /// HashSet<int> intersection = new HashSet<int>(setA);
+            /// intersection.IntersectWith(setB);
+            ///
+            /// Console.WriteLine( Intersection );
+            ///
+            /// HashSet<int> except = new HashSet<int>(setA);
+            /// except.ExceptWith(setB);
+            ///
+            /// Console.WriteLine( Except );
+
+
+            /// 06) Use IsSubsetOf to check if {1,2} is a subset of Set A.
+            ///
+            /// HashSet<int> smallSet = [1, 2];
+            
+            /// bool isSubset = smallSet.IsSubsetOf(setA);
+
+            ///foreach (int num in setA)
+            ///{
+            ///    Console.WriteLine(num);
+            ///}
+
+            #endregion
 
 
 
