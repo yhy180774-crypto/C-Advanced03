@@ -160,7 +160,77 @@
             #endregion
 
 
+            #region Exercise03
 
+            //// Exercise 3: Phone Book
+            ///
+            /// Build a phone book application.
+
+
+            /// 01) Create a Collection with 4 contacts (name -> phone number).
+            ///
+            /// Dictionary<string, string> phoneBook = new();
+            ///
+            /// phoneBook.Add("Ahmed", "01011111111");
+            /// phoneBook.Add("Sara", "01022222222");
+            /// phoneBook.Add("Ali", "01033333333");
+            /// phoneBook.Add("Mona", "01044444444");
+
+
+            /// 02) Add a new contact using [] syntax (add or update).
+            ///
+            /// phoneBook["Omar"] = "01055555555";
+
+
+            /// 03) Try adding a duplicate using .Add()
+            ///     Catch the exception and print the error.
+            ///
+            /// try
+            /// {
+            ///     phoneBook.Add("Ahmed", "01111111111");
+            /// }
+            /// catch (ArgumentException ex)
+            /// {
+            ///     Console.WriteLine("Error: " + ex.Message);
+            /// }
+
+
+            /// 04) Try adding a duplicate using .TryAdd()
+            ///     Print whether it succeeded.
+            ///
+            /// bool added = phoneBook.TryAdd("Ahmed", "01111111111");
+            ///
+            /// Console.WriteLine("TryAdd succeeded: " + added);
+
+
+            /// 05) Search for a contact that doesn't exist.
+            ///
+            /// if (phoneBook.ContainsKey("Yousef"))
+            /// {
+            ///     Console.WriteLine(phoneBook["Yousef"]);
+            /// }
+            /// else
+            /// {
+            ///     Console.WriteLine("Contact not found.");
+            /// }
+
+
+            /// 06) Get a contact with a fallback of "Not Found".
+            ///
+            /// string phone = phoneBook.GetValueOrDefault( "Yousef", "Not Found");
+            ///
+            /// Console.WriteLine("Phone: " + phone);
+
+
+            /// 07) Print all Keys on one line,then all Values on another line.
+            ///
+            /// Console.WriteLine("Keys:");
+            /// Console.WriteLine( string.Join(", ", phoneBook.Keys));
+            ///
+            /// Console.WriteLine("Values:");
+            /// Console.WriteLine(  string.Join(", ", phoneBook.Values));
+
+            #endregion
 
 
 
