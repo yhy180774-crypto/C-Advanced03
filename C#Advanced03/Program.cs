@@ -4,7 +4,349 @@
     {
         static void Main(string[] args)
         {
+
+
+            #region Exercise01
+
+            //// Exercise 1: Student Grade Manager
+            ///
+            /// Create a program that manages student grades using One Of Collections.
+
+
+            /// 01) Create a Collection with these grades: 85, 92, 78, 95, 88, 70, 100, 65.
+            ///
+            /// List<int> grades = [85, 92, 78, 95, 88, 70, 100, 65]; 
+
+
+            /// 02) Print the collection, Count, first and last grade.
+            ///
+            /// Console.WriteLine("Grades:");
+            /// foreach (int grade in grades)
+            /// {
+            ///     Console.WriteLine(grade);
+            /// }
+            ///
+            /// Console.WriteLine("Count: " + grades.Count);
+            /// Console.WriteLine("First Grade: " + grades[0]);
+            /// Console.WriteLine("Last Grade: " + grades[grades.Count - 1]);
+
+
+            /// 03) Sort the grades ascending, then print.
+            ///
+            /// grades.Sort();
+            ///
+            /// Console.WriteLine("Sorted Grades:");
+            /// foreach (int grade in grades)
+            /// {
+            ///     Console.WriteLine(grade);
+            /// }
+
+
+            /// 04) Get the first grade above 90.
+            ///
+            /// int firstAbove90 = grades.Find(grade => grade > 90);
+            ///
+            /// Console.WriteLine("First Grade Above 90: " + firstAbove90);
+
+
+            /// 05) Get all grades below 75 (failing grades).
+            ///
+            /// List<int> failingGrades =
+            ///     grades.FindAll(grade => grade < 75);
+            ///
+            /// Console.WriteLine("Failing Grades:");
+            /// foreach (int grade in failingGrades)
+            /// {
+            ///     Console.WriteLine(grade);
+            /// }
+
+
+            /// 06) Remove all failing grades (below 75).
+            ///
+            /// grades.RemoveAll(grade => grade < 75);
+            ///
+            /// Console.WriteLine("Grades After Removing Failing Grades:");
+            /// foreach (int grade in grades)
+            /// {
+            ///     Console.WriteLine(grade);
+            /// }
+
+
+            /// 07) Check if any grade equals 100.
+            ///
+            /// bool has100 = grades.Contains(100);
+            ///
+            /// Console.WriteLine("Contains 100: " + has100);
+
+
+            /// 08) Create a List<string> where each grade becomes "Grade: X".
+            ///
+            /// List<string> gradeStrings =
+            ///     grades.ConvertAll(grade => "Grade: " + grade);
+            ///
+            /// Console.WriteLine("Grade Strings:");
+            /// foreach (string grade in gradeStrings)
+            /// {
+            ///     Console.WriteLine(grade);
+            /// }
+
+            #endregion
+
+
+            #region Exercise02
+
+            //// Exercise 2: Leaderboard
+            ///
+            /// Create a leaderboard that automatically sorts players by score.
+
+
+            /// 01) Add: 500="Ahmed", 200="Sara", 800="Ali", 350="Mona".
+            ///
+            /// SortedDictionary<int, string> leaderboard = new();
+            ///
+            /// leaderboard.Add(500, "Ahmed");
+            /// leaderboard.Add(200, "Sara");
+            /// leaderboard.Add(800, "Ali");
+            /// leaderboard.Add(350, "Mona");
+
+
+            /// 02) Print all entries.
+            ///     They should be sorted by score automatically.
+            ///
+            /// Console.WriteLine("Leaderboard:");
+            ///
+            /// foreach (KeyValuePair<int, string> player in leaderboard)
+            /// {
+            ///     Console.WriteLine( player.Key + " = " + player.Value); 
+            /// }
+
+
+            /// 03) Access the first key and first value.
+            ///
+            /// Console.WriteLine("First Key: " + leaderboard.First().Key);
+            /// Console.WriteLine("First Value: " + leaderboard.First().Value);
+
+
+            /// 04) Check if score 500 exists.
+            ///
+            /// bool score500Exists = leaderboard.ContainsKey(500);
+            ///
+            /// Console.WriteLine( "Score 500 Exists: " + score500Exists);
+
+
+            /// 05) Safely get the player with score 999.
+            ///
+            /// if (leaderboard.TryGetValue(999, out string player999))
+            /// {
+            ///     Console.WriteLine("Player: " + player999);
+            /// }
+            /// else
+            /// {
+            ///     Console.WriteLine("Score 999 not found.");
+            /// }
+
+
+            /// 06) Remove the player with score 200 and print the updated list.
+            ///
+            /// leaderboard.Remove(200);
+            ///
+            /// Console.WriteLine("Updated Leaderboard:");
+            ///
+            /// foreach (KeyValuePair<int, string> player in leaderboard)
+            /// {
+            ///     Console.WriteLine( player.Key + " = " + player.Value);
+            /// }
+
+            #endregion
+
+
+            #region Exercise03
+
+            //// Exercise 3: Phone Book
+            ///
+            /// Build a phone book application.
+
+
+            /// 01) Create a Collection with 4 contacts (name -> phone number).
+            ///
+            /// Dictionary<string, string> phoneBook = new();
+            ///
+            /// phoneBook.Add("Ahmed", "01011111111");
+            /// phoneBook.Add("Sara", "01022222222");
+            /// phoneBook.Add("Ali", "01033333333");
+            /// phoneBook.Add("Mona", "01044444444");
+
+
+            /// 02) Add a new contact using [] syntax (add or update).
+            ///
+            /// phoneBook["Omar"] = "01055555555";
+
+
+            /// 03) Try adding a duplicate using .Add()
+            ///     Catch the exception and print the error.
+            ///
+            /// try
+            /// {
+            ///     phoneBook.Add("Ahmed", "01111111111");
+            /// }
+            /// catch (ArgumentException ex)
+            /// {
+            ///     Console.WriteLine("Error: " + ex.Message);
+            /// }
+
+
+            /// 04) Try adding a duplicate using .TryAdd()
+            ///     Print whether it succeeded.
+            ///
+            /// bool added = phoneBook.TryAdd("Ahmed", "01111111111");
+            ///
+            /// Console.WriteLine("TryAdd succeeded: " + added);
+
+
+            /// 05) Search for a contact that doesn't exist.
+            ///
+            /// if (phoneBook.ContainsKey("Yousef"))
+            /// {
+            ///     Console.WriteLine(phoneBook["Yousef"]);
+            /// }
+            /// else
+            /// {
+            ///     Console.WriteLine("Contact not found.");
+            /// }
+
+
+            /// 06) Get a contact with a fallback of "Not Found".
+            ///
+            /// string phone = phoneBook.GetValueOrDefault( "Yousef", "Not Found");
+            ///
+            /// Console.WriteLine("Phone: " + phone);
+
+
+            /// 07) Print all Keys on one line,then all Values on another line.
+            ///
+            /// Console.WriteLine("Keys:");
+            /// Console.WriteLine( string.Join(", ", phoneBook.Keys));
+            ///
+            /// Console.WriteLine("Values:");
+            /// Console.WriteLine(  string.Join(", ", phoneBook.Values));
+
+            #endregion
+
+
+            #region Exercise04
+
+            /// Exercise 4: Unique Email Validator
+            ///
+            /// Use Collection to manage unique email addresses.
+
+
+            /// 01) Create a HashSet<string> with a case-insensitive comparer.
+            ///
+            /// HashSet<string> emails = new HashSet<string>( StringComparer.OrdinalIgnoreCase);
+
+
+            /// 02) Add these emails:
+            ///     "ahmed@test.com", "AHMED@test.com",
+            ///     "sara@test.com", "Sara@Test.com".
+            ///
+            /// emails.Add("ahmed@test.com");
+            /// emails.Add("AHMED@test.com");
+            /// emails.Add("sara@test.com");
+            /// emails.Add("Sara@Test.com");
+
+
+            /// 03) Print Count — how many are actually stored? Explain why.
+            ///
+            /// Console.WriteLine("Email Count: " + emails.Count);
+
+
+            /// 04) Create two sets:
+            ///     Set A = {1,2,3,4,5}
+            ///     Set B = {4,5,6,7,8}
+            ///
+            ///HashSet<int> setA =  [ 1, 2, 3, 4, 5 ];
+            /// HashSet<int> setB = [ 4, 5, 6, 7, 8 ];
+
+
+            /// 05) Print the result of:
+            ///     UnionWith, IntersectWith, ExceptWith.
+            ///
+            /// HashSet<int> union = new HashSet<int>(setA);
+            /// union.UnionWith(setB);
+            ///
+            /// Console.WriteLine( Union );
+            ///
+            /// HashSet<int> intersection = new HashSet<int>(setA);
+            /// intersection.IntersectWith(setB);
+            ///
+            /// Console.WriteLine( Intersection );
+            ///
+            /// HashSet<int> except = new HashSet<int>(setA);
+            /// except.ExceptWith(setB);
+            ///
+            /// Console.WriteLine( Except );
+
+
+            /// 06) Use IsSubsetOf to check if {1,2} is a subset of Set A.
+            ///
+            /// HashSet<int> smallSet = [1, 2];
             
+            /// bool isSubset = smallSet.IsSubsetOf(setA);
+
+            ///foreach (int num in setA)
+            ///{
+            ///    Console.WriteLine(num);
+            ///}
+
+            #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
     }
 }
